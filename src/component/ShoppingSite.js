@@ -45,7 +45,7 @@ class ShoppingSite extends React.Component {
                         </a>
                     </div>
                     <div className="description">
-                        <b><a href={this.props.url}> {this.props.title} </a></b>
+                        <b><a href={this.props.url} target="_blank"> {this.props.title} </a></b>
                         <p>{this.props.description}</p>
                     </div>
                     <div className="extra">
