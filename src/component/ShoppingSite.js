@@ -3,15 +3,17 @@ import '../../node_modules/semantic-ui/dist/semantic.css';
 
 class ShoppingSite extends React.Component {
 
-    constructor(props){
-        super(props);
-        this.state={
+    constructor(){
+        super();
+        /* this.state={
             vote:this.props.vote
-        }
+        } */
+
         this.upVote=this.upVote.bind(this);
         this.downVote=this.downVote.bind(this);
     }
 
+    /*
     upVote(){
         console.log("upvoted");
         this.setState({
@@ -27,7 +29,18 @@ class ShoppingSite extends React.Component {
         })
         
     }
+    */
     
+    upVote(){
+        console.log("upvoted");
+        this.props.onCheck(this.props.id, 1)
+    }
+
+    downVote(){
+        console.log("downvoted");
+        this.props.onCheck(this.props.id, 0)
+    }
+
     render() { 
         return ( 
             <div className="item">
@@ -36,7 +49,7 @@ class ShoppingSite extends React.Component {
                 </div>
                 <div className="middle aligned content">
                     <div className="header">
-                        {this.state.vote}
+                        {this.props.vote}
                         <a onClick={this.upVote}>
                             <i className="chevron circle up icon" />
                         </a>
